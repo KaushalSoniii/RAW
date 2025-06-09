@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics & Embedded Systems Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark-bg': '#080808', // Very dark background (near black)
+            'brand-dark-surface': '#101010', // Dark surface for cards, header bg on scroll (made slightly darker)
+            'brand-dark-surface-hover': '#1F1F1F', // Slightly lighter for hover on surfaces
+            'brand-dark-text-primary': '#EAEAEA', // Primary text (off-white)
+            'brand-dark-text-secondary': '#A0A0A0', // Secondary text (gray)
+            'brand-dark-text-tertiary': '#666666', // For less important text or placeholders
+            'brand-dark-border': '#2D2D2D', // Subtle borders
+            'brand-accent': '#FFFFFF', // White accent (for buttons, highlights)
+            'brand-accent-hover': '#D1D1D1', // Hover for white accent
+            'brand-contact-accent': '#4A90E2', // Blue accent for contact page icon/marker
+
+            // Retaining some old colors for reference or specific use if needed, but primary focus is dark theme
+            'brand-bg': '#080808', 
+            'brand-surface': '#101010',
+            'brand-primary': '#0284c7', 
+            'brand-cta': '#FFFFFF', 
+            'brand-cta-darker': '#E0E0E0', 
+
+            'text-primary': '#EAEAEA',
+            'text-secondary': '#A0A0A0',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            orbitron: ['Orbitron', 'sans-serif'], 
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            'subtle-pulse': 'subtlePulse 2s infinite ease-in-out',
+            'modal-enter': 'modalEnter 0.3s ease-out forwards',
+            'modal-leave': 'modalLeave 0.3s ease-in forwards',
+            'slide-in-bottom': 'slideInBottom 0.5s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(25px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            subtlePulse: { 
+              '0%, 100%': { boxShadow: '0 0 15px rgba(255, 255, 255, 0.1)' },
+              '50%': { boxShadow: '0 0 25px rgba(255, 255, 255, 0.15)' },
+            },
+            modalEnter: {
+                '0%': { opacity: '0', transform: 'scale(0.95) translateY(-10px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+            },
+            modalLeave: {
+                '0%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+                '100%': { opacity: '0', transform: 'scale(0.95) translateY(-10px)' },
+            },
+            slideInBottom: {
+              '0%': { opacity: '0', transform: 'translateY(50px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            }
+          },
+          boxShadow: { 
+            'glow-accent': '0 0 15px rgba(255, 255, 255, 0.2), 0 0 30px rgba(255, 255, 255, 0.1)',
+            'card-dark': '0 4px 12px rgba(0, 0, 0, 0.3)',
+            'card-dark-hover': '0 8px 20px rgba(0, 0, 0, 0.4)',
+          },
+          backgroundImage: {
+            'form-grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1 L20 1 M1 0 L1 20 Z' stroke='%232D2D2D' stroke-width='0.5'/%3E%3C/svg%3E\")",
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #080808; /* brand-dark-bg */
+      color: #EAEAEA; /* brand-dark-text-primary */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .font-orbitron { 
+      font-family: 'Orbitron', sans-serif;
+    }
+    /* Custom scrollbar for webkit browsers - Dark theme */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #141414; /* brand-dark-surface */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a3a3a; /* Darker gray for thumb */
+      border-radius: 5px;
+      border: 2px solid #141414;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #5a5a5a; 
+    }
+    /* Updated Section Title for dark theme - can be overridden per section */
+    .section-title-main { /* For very large titles like "SEE FIGURE IN ACTION" */
+      @apply text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-orbitron text-brand-dark-text-primary uppercase tracking-tighter;
+    }
+     .section-title-sub { /* For "The latest" */
+      @apply text-sm font-semibold text-brand-dark-text-secondary uppercase tracking-wider mb-2;
+    }
+
+    /* Form input styling for dark theme */
+    .form-input-dark {
+      @apply w-full px-4 py-3 bg-[#1F1F1F] border border-brand-dark-border rounded-md text-brand-dark-text-primary placeholder-brand-dark-text-tertiary 
+             focus:outline-none focus:ring-2 focus:ring-brand-accent/70 focus:border-brand-accent 
+             transition-all duration-200 ease-in-out hover:border-brand-dark-text-secondary;
+    }
+    .form-label-dark { 
+      @apply block mb-1.5 text-sm font-medium text-brand-dark-text-secondary;
+    }
+    /* CTA button for dark theme - primarily white text on dark surface or white button */
+    .cta-button-dark-primary { /* White button, dark text */
+      @apply bg-brand-accent hover:bg-brand-accent-hover text-brand-dark-bg font-semibold py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 text-base md:text-lg;
+    }
+    .cta-button-dark-secondary { /* Transparent bg, white border/text */
+      @apply bg-transparent border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-brand-dark-bg font-semibold py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 text-base md:text-lg;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "@/components/": "./components/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
