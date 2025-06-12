@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NAV_LINKS } from '../constants';
 import { NavLink as NavLinkType } from '../types';
 
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20); // Adjust scroll threshold for background change
+      setIsScrolled(window.scrollY > 10); // Adjusted scroll threshold for background change
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -40,9 +40,13 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out 
-                  ${isScrolled ? 'bg-brand-dark-surface/80 shadow-xl backdrop-blur-lg border-b border-brand-dark-border' : 'bg-brand-dark-bg/70 backdrop-blur-md'}`}
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-black/40 backdrop-blur-md'
+          : 'bg-transparent'
+      }`}
+      style={{ WebkitBackdropFilter: isScrolled ? 'blur(8px)' : 'none', backdropFilter: isScrolled ? 'blur(8px)' : 'none' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
