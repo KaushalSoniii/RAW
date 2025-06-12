@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
             onClick={() => scrollToSection('hero')}
             aria-label="R&W Robotics, scroll to top"
             >
-            R&W Robotics
+            RAW Robotics
           </div>
           
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
