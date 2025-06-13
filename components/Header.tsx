@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NAV_LINKS } from '../constants';
 import { NavLink as NavLinkType } from '../types';
+import UiVerseButton from './UiVerseButton';
 
 interface HeaderProps {
   scrollToSection: (sectionId: string) => void;
@@ -58,16 +59,16 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
             RAW Robotics
           </div>
           
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <nav className="hidden md:flex items-center space-x-3 lg:space-x-4">
             {NAV_LINKS.map((link: NavLinkType) => (
-              <button
+              <UiVerseButton
                 key={link.label}
                 onClick={() => handleLinkClick(link.targetId)}
-                className="text-brand-dark-text-primary hover:bg-brand-dark-surface-hover px-4 py-2 rounded-full transition-all duration-200 text-sm font-medium"
                 aria-label={`Navigate to ${link.label} section`}
+                style={{ backgroundColor: '#222', fontSize: '16px', minWidth: 120 }}
               >
                 {link.label}
-              </button>
+              </UiVerseButton>
             ))}
           </nav>
 
@@ -88,14 +89,14 @@ const Header: React.FC<HeaderProps> = ({ scrollToSection }) => {
         <div className="md:hidden bg-brand-dark-surface/95 backdrop-blur-md absolute top-full left-0 right-0 shadow-xl border-t border-brand-dark-border">
           <nav className="flex flex-col items-stretch space-y-1 py-3">
             {NAV_LINKS.map((link: NavLinkType) => (
-              <button
+              <UiVerseButton
                 key={link.label}
                 onClick={() => handleLinkClick(link.targetId)}
-                className="text-brand-dark-text-primary hover:bg-brand-dark-surface-hover transition-colors duration-200 text-base py-3 px-4 text-left"
                 aria-label={`Navigate to ${link.label} section`}
+                style={{ backgroundColor: '#222', fontSize: '16px', minWidth: 120, marginBottom: 8 }}
               >
                 {link.label}
-              </button>
+              </UiVerseButton>
             ))}
           </nav>
         </div>

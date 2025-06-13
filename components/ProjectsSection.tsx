@@ -54,7 +54,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ id }) => {
         <div className="flex justify-between items-end mb-10 md:mb-16">
           <div>
             <p className="section-title-sub">The Latest</p>
-            <h2 className="section-title-main">SEE R&W IN ACTION.</h2>
+            <h2 className="section-title-main">SEE RAW IN ACTION.</h2>
           </div>
           <div className="hidden md:flex space-x-3">
             <button
