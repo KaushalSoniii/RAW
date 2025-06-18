@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
         <div className="flex flex-col md:flex-col md:items-center justify-between items-center">
           <p className="text-sm text-center mb-4">
-            &copy; {new Date().getFullYear()} R&W Robotics. All rights reserved.
+            &copy; {new Date().getFullYear()} RAW Boats. All rights reserved.
           </p>
           <div className="flex space-x-5 mb-4 md:mt-4">
             <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-brand-accent transition-colors" aria-label="R&W Robotics on LinkedIn">

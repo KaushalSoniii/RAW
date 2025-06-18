@@ -85,9 +85,9 @@ const ContactSection: React.FC<ContactSectionProps> = ({ id }) => {
 
           {/* Right Column - Form */}
           <div 
-            className="bg-brand-dark-surface p-6 sm:p-8 md:p-10 rounded-xl shadow-2xl border border-brand-dark-border bg-form-grid-pattern animate-fade-in-up" 
+            className="bg-brand-dark-surface/80 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-xl shadow-2xl border border-brand-dark-border animate-fade-in-up"
             style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}
-            >
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="fullName" className="form-label-dark block mb-1 font-medium">

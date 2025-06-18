@@ -12,7 +12,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold font-sans text-brand-dark-text-primary">
+          <h2 className="text-4xl sm:text-5xl font-bold font-sans text-brand-dark-text-primary ">
             Who <span className="text-brand-accent">We Are</span>
           </h2>
           <p className="mt-4 text-lg text-brand-dark-text-secondary max-w-2xl mx-auto">
@@ -46,13 +46,13 @@ const AboutSection: React.FC<AboutSectionProps> = ({ id }) => {
               Pioneering Next-Gen Solutions
             </h3>
             <p className="text-base md:text-lg text-brand-dark-text-secondary leading-relaxed">
-              At RAW Robotics, we are a dynamic collective of engineers, designers, and visionaries, passionately committed to redefining the frontiers of robotics and embedded systems. Our core mission is to architect intelligent, bespoke solutions that tackle complex real-world challenges and catalyze technological progress across diverse industries.
+              At RAW Boats, we are a dynamic collective of engineers, designers, and visionaries, passionately committed to redefining the frontiers of robotics and embedded systems. Our core mission is to architect intelligent, bespoke solutions that tackle complex real-world challenges and catalyze technological progress across diverse industries.
             </p>
             <p className="text-base md:text-lg text-brand-dark-text-secondary leading-relaxed">
               Our expertise is comprehensive, spanning from intricate low-level hardware design to sophisticated AI algorithm development. We guide projects from initial ideation through to successful deployment, fostering close collaboration with our clients to ensure the delivery of solutions that are not only robust and scalable but also truly impactful.
             </p>
             <p className="text-base md:text-lg text-brand-dark-text-secondary leading-relaxed">
-              Built on a bedrock of innovation, unwavering integrity, and synergistic collaboration, RAW Robotics aspires to be your trusted ally in harnessing the transformative potential of automation and intelligent systems.
+              Built on a bedrock of innovation, unwavering integrity, and synergistic collaboration, RAW Boats aspires to be your trusted ally in harnessing the transformative potential of automation and intelligent systems.
             </p>
           </div>
         </div>
