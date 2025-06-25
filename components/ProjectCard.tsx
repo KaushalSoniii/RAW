@@ -8,34 +8,43 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
   return (
-    <div 
-      className="bg-brand-dark-surface rounded-lg overflow-hidden flex flex-col h-full w-full group transition-all duration-300 ease-in-out hover:shadow-card-dark-hover cursor-pointer"
+    <div
+      className="
+        bg-brand-dark-surface/80 border border-brand-dark-bg/40 shadow-2xl rounded-2xl
+        overflow-hidden flex flex-col w-full max-w-full sm:max-w-xl min-h-[260px] sm:min-h-[340px] group
+        transition-all duration-300 ease-in-out hover:shadow-3xl hover:border-brand-accent/60
+        cursor-pointer backdrop-blur-lg
+      "
       onClick={onClick}
-      onKeyDown={(e) => e.key === 'Enter' && onClick()}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
       role="button"
       tabIndex={0}
       aria-label={`View details for ${project.name}`}
     >
-      <div className="relative aspect-[16/10] overflow-hidden"> {/* Adjusted aspect ratio */}
-        <img 
-          src={project.imageUrl} 
-          alt={project.name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
+      <div className="relative aspect-[16/9] sm:aspect-[16/6] overflow-visible">
+        <img
+          src={project.imageUrl}
+          alt={project.name}
+          className="w-full h-full object-cover transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10"></div> {/* Subtle gradient overlay */}
-        
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10"></div>
         {/* "Watch Now" Badge */}
-        <div className="absolute top-3 left-3 md:top-4 md:left-4">
-          <span className="bg-black/60 backdrop-blur-sm text-white text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-md">
+        <div className="absolute top-3 left-3 sm:top-5 sm:left-5">
+          <span className="bg-black/70 backdrop-blur text-white text-xs sm:text-sm font-semibold px-3 py-1.5 sm:px-5 sm:py-2 rounded-lg sm:rounded-xl shadow-md tracking-wide">
             Watch Now
           </span>
         </div>
       </div>
-      <div className="p-4 md:p-5">
-        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-brand-dark-text-primary group-hover:text-brand-accent transition-colors duration-200 truncate">
+      <div className="px-4 py-4 sm:px-8 sm:py-6 flex-1 flex flex-col justify-end">
+        <h3 className="text-lg sm:text-2xl font-bold text-brand-dark-text-primary group-hover:text-brand-accent transition-colors duration-200 mb-1 sm:mb-2 break-words">
           {project.name}
         </h3>
-        {/* Description and tech tags removed from card view for minimalist design */}
+        {/* Optionally add a subtle divider or a tech stack row here */}
       </div>
     </div>
   );

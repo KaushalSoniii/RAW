@@ -53,8 +53,18 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ id }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10 md:mb-16">
           <div>
-            <p className="section-title-sub">The Latest</p>
-            <h2 className="section-title-main">SEE RAW IN ACTION.</h2>
+            <p className="text-sm sm:text-base font-semibold uppercase tracking-[0.25em] text-brand-accent mb-2">
+              The Latest
+            </p>
+            <h2
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white drop-shadow-lg"
+              style={{
+                fontFamily: "'Orbitron', sans-serif",
+                letterSpacing: '0.08em',
+              }}
+            >
+              SEE RAW IN ACTION.
+            </h2>
           </div>
           <div className="hidden md:flex space-x-3">
             <button

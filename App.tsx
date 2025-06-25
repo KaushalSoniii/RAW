@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
@@ -6,6 +5,7 @@ import ProjectsSection from './components/ProjectsSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from '@/components/ContactSection'; // Changed to aliased import
 import Footer from '@/components/Footer'; // Changed to aliased import
+import TrustedBySection from './components/TrustedBySection'; // Add this import
 import { SECTION_IDS } from './constants';
 
 const App: React.FC = () => {
@@ -32,6 +32,7 @@ const App: React.FC = () => {
       <main className="flex-grow">
         <HeroSection id={SECTION_IDS.HERO} scrollToProjects={() => scrollToSection(SECTION_IDS.PROJECTS)} />
         <ProjectsSection id={SECTION_IDS.PROJECTS} />
+        <TrustedBySection /> {/* <-- Add this line */}
         <AboutSection id={SECTION_IDS.ABOUT} />
         <ContactSection id={SECTION_IDS.CONTACT} />
       </main>

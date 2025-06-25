@@ -22,6 +22,8 @@ const HeroSection: React.FC = () => (
         playsInline
       />
     </div>
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
 
     {/* Content */}
     <div
@@ -47,21 +49,30 @@ const HeroSection: React.FC = () => (
           lineHeight: 1.1,
         }}
       >
-        RAW Boats:
+        RAW Bots:
       </h1>
       <span
-        className="block mt-2 md:mt-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500
-        text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-center sm:text-left mb-6 md:mb-8"
+        className="block mt-2 md:mt-3 text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold text-center sm:text-left mb-6 md:mb-8"
         style={{
           fontFamily: "'Orbitron', sans-serif",
           letterSpacing: '0.06em',
           lineHeight: 1.15,
+          background: 'linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6)', // pink-500, violet-500, blue-500
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
         }}
       >
         Engineering the Future of Intelligent<br />
-        <span className="block">
-          Automation
-        </span>
+        <span
+    className="block"
+    style={{
+      background: 'linear-gradient(90deg, #a78bfa, #3b82f6, #22d3ee)', // purple-400, blue-500, cyan-400
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+    }}
+  >
+    Automation
+  </span>
       </span>
       <a
         href="#how-we-work"
